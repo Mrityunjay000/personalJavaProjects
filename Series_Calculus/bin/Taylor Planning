@@ -1,0 +1,45 @@
+Version 1:-
+Steps to get a function into a taylor series:
+	1. derive the function n number of times
+	2. plug in the c value
+	3. take that number and divide by n! - we will call this the coef
+	4. take the coef and multiply it by x raised to the power of n (the same as n!)
+	5. this resultant is a term of the taylor polynomial
+	6. from here find a pattern that fits summation notation -- this step will not be implemented right now. 
+	
+Necessary elements:
+	1. Runner class
+	2. Converter Class (Call it TaylorConverter)
+		-will have the factorial function within it
+		-will also have the print method (format the n part with a for loop)
+	3. Derivative Class (abstract)
+		-extend this class with the derivative methods of other types of functions
+		-come in later and then define derivative methods other than the power rule 
+		and the common memorizable derivatives (could even make them in an interface). 
+		-the "+" and "-" signs must be handled during the derivations
+		-the derivative class should also have a compute method that gives the number answer around c
+			i. Should have the method compute (returns a double).
+			ii. Should have a method derive (returns a String). 
+
+Finalized calculator:
+Classes:
+	1. Derivative (abstract) - has a function called derivative that returns a string of as the derivative of the function inputted.
+	Meant to be implemented by other types of derivative classes
+	2. NumComputer - this class contains the factorial and the compute (computing the function around the c) functions. Used 
+	heavily in the runner class. 
+	3. PolynomialDerivative - extends the derivative class and derives basic polynomial functions with the power rule only. 
+	4. TaylorConverter - this class takes in the original function and then manipulates it in different ways in order to get the 
+	final answer. This is the over-arching class that oversees the major operations that take place within the program.
+	5. Runner - this is the runner class where data is input. 
+---------------------------------------------------------------------------------------------------
+Version 2:-
+Will contain the derivation for a^z, log(base a) (b), and basic trig. 
+Will implement parts of Version 1. 
+
+Basic Trig:
+- call this class the Trig class. 
+- for now will only have the first six trig derivations. 
+	- the derivations are really memorizations, so perhaps use a static final array with all of the answers. 
+	-better yet, use a hash table (because it has keys). 
+
+		
